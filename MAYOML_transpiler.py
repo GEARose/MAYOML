@@ -115,6 +115,13 @@ symbols = {
     "and": "∧",
     "or": "∨",
     "eqv": "≡",
+    "C": bold("ℂ"),
+    "H": bold("ℍ"),
+    "N": bold("ℕ"),
+    "P": bold("ℙ"),
+    "Q": bold("ℚ"),
+    "R": bold("ℝ"),
+    "Z": bold("ℤ")
 }
 
 modifications = {
