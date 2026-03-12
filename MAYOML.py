@@ -92,6 +92,10 @@ def subscript(text:str) -> str:
     return "<sub>"+text+"</sub>"
 def underline(text:str) -> str:
     return "<u>"+text+"</u>"
+def bold(text:str) -> str:
+    return "<b>"+text+"</b>"
+def italicize(text:str) -> str:
+    return "<i>"+text+"</i>"
 
 symbols = {
     "perp": "⟂",
@@ -104,7 +108,9 @@ symbols = {
 modifications = {
     "sub": subscript,
     "sup": superscript,
-    "und": underline
+    "und": underline,
+    "bold": bold
+    "ital": italicize
 }
 
 
