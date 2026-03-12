@@ -13,15 +13,16 @@ def parse(text:str):
     # check for number of delimiters 
     if count(working,ld) != count(working,rd):
         print("ERROR: Uneven Delimiters!!!")
+        pass
 
     # call parse helper
     working = parse_helper(working)
 
-
+    # replace literals
+    finished = working.replace(ldLit,ld).replace(rdLit,rd)
     
 
-
-    return working
+    return finished
 
 # recursively akflasjdf;aslkd
 # pass in text without the external braces
