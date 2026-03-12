@@ -65,11 +65,11 @@ def parse_helper(text:str) ->str:
                 break
         
         # replaces {section} with result by recursing
-        print("from: "+text)
-        print("left: "+str(left_i))
-        print("right: "+str(right_i))
+        #print("from: "+text)
+        #print("left: "+str(left_i))
+        #print("right: "+str(right_i))
         text = text[:left_i]+parse_helper(text[left_i+1:right_i])+text[right_i+1:]
-        print("to: "+text)
+        #print("to: "+text)
     return parse_helper(text)
 
         
@@ -96,6 +96,11 @@ def bold(text:str) -> str:
     return "<b>"+text+"</b>"
 def italicize(text:str) -> str:
     return "<i>"+text+"</i>"
+def bar(text:str) -> str:
+    ans=""
+    for i in range(len(text)):
+        ans+=text[i]+"&#x0305;"
+    return ans
 
 symbols = {
     "perp": "⟂",
@@ -109,14 +114,16 @@ modifications = {
     "sub": subscript,
     "sup": superscript,
     "und": underline,
-    "bold": bold
-    "ital": italicize
+    "bold": bold,
+    "ital": italicize,
+    "bar": bar
 }
 
 
 
 
 
-asdf = "v{w{{perp}\sup}\sub}"
+asdf = "{x\bar} and {asdf\bar}"
+asdf = input("type here: ")
 print(asdf)
 print(parse(asdf))
