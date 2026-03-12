@@ -90,6 +90,8 @@ def superscript(text:str) -> str:
     return "<sup>"+text+"</sup>"
 def subscript(text:str) -> str:
     return "<sub>"+text+"</sub>"
+def underline(text:str) -> str:
+    return "<u>"+text+"</u>"
 
 symbols = {
     "perp": "⟂",
@@ -102,6 +104,7 @@ symbols = {
 modifications = {
     "sub": subscript,
     "sup": superscript
+    "und": underline
 }
 
 
