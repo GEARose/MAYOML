@@ -103,7 +103,7 @@ symbols = {
 
 modifications = {
     "sub": subscript,
-    "sup": superscript
+    "sup": superscript,
     "und": underline
 }
 
