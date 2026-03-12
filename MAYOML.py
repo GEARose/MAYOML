@@ -101,6 +101,12 @@ def bar(text:str) -> str:
     for i in range(len(text)):
         ans+=text[i]+"&#x0305;"
     return ans
+def hat(text:str) -> str:
+    ans=""
+    for i in range(len(text)):
+        ans+=text[i]+"&#770;"
+    return ans
+
 
 symbols = {
     "perp": "⟂",
@@ -116,7 +122,8 @@ modifications = {
     "und": underline,
     "bold": bold,
     "ital": italicize,
-    "bar": bar
+    "bar": bar,
+    "hat": hat
 }
 
 
