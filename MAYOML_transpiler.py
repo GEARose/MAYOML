@@ -1,3 +1,5 @@
+import sys
+
 ld = "{"    # delimiters
 rd = "}"
 ldLit = "!@#$(" # literals of the delimter characters are temporarily 
@@ -73,8 +75,6 @@ def parse_helper(text:str) ->str:
         #print("to: "+text)
     return parse_helper(text)
 
-        
-
 def count(text:str,target:str) -> int:
     if len(text)==0 or len(target)==0:
         return 0
@@ -138,7 +138,13 @@ modifications = {
 
 
 
-asdf = "{x\bar} and {asdf\bar}"
-asdf = input("type here: ")
-print(asdf)
-print(parse(asdf))
+#mayoml = "{x\bar} and {mayoml\bar}"
+#mayoml = input("type here: ")
+mayoml = open(sys.argv[1], "r").read()
+#print(mayoml)
+html = parse(mayoml)
+print(parse(mayoml))
+
+f = open("test_thing.html", "w", encoding="utf-8")
+f.write(html)
+f.close()
