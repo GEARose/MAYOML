@@ -134,17 +134,26 @@ modifications = {
     "hat": hat
 }
 
+def main():
+
+    in_file_name = sys.argv[1]
+    in_file = open(in_file_name, "r")
+    mayoml = in_file.read()
+    html = parse(mayoml)
+
+    out_file_name = None
+    if len(sys.argv)>2:
+        out_file_name = sys.argv[2]
+    else:
+        a = in_file_name.split(".")
+        a[-1] = "html"
+        out_file_name = ".".join(a)
+
+    #print(out_file_name)
+
+    out_file = open(out_file_name, "w", encoding="utf-8")
+    out_file.write(html)
+    out_file.close()
 
 
-
-
-#mayoml = "{x\bar} and {mayoml\bar}"
-#mayoml = input("type here: ")
-mayoml = open(sys.argv[1], "r").read()
-#print(mayoml)
-html = parse(mayoml)
-print(parse(mayoml))
-
-f = open("test_thing.html", "w", encoding="utf-8")
-f.write(html)
-f.close()
+main()
