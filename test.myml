@@ -1,0 +1,43 @@
+{Known\und}
+1. A{x\bar} represents a {linear combination\und}
+	of {columns\und} of A.
+2. {y\bar} = A{x\bar} is a {linear tranformation\und}
+	From R{n\sup} to R{m\sup}
+	{Range\und} of this function is Col(A) [column space of A]
+3. A{x\bar}={b\bar} may have no solution (i.e. inconsistent)
+	2 & 3 Imply the system is consistent {provided\und} {b\bar} {ele} Col(A)
+
+When {no\und} solution exists, we instead try to minimize ||A{x\bar} - {b\bar}||
+	(called {least\und}-{squares\und} error)
+
+4. Choose {x\bar} to solve A{x\bar} = {b\bar}{Col(A)\sub}
+						^b projected onto Col(A)
+	{b\bar}{Col(A)\sub} = A{x\hat} where {x\hat} solves A{T\sup}A{x\hat}=A{T\sup}{b\hat}
+
+{Least squares solution\und} is {x\hat} (as opposed to A{x\hat})
+Least squares Error:
+	||A{x\hat} - {b\bar}||
+	   ^{b\bar}{Col(A)\sub}
+
+	Note: A{T\sup}A{x\hat}=A{T\sup}{b\hat} is {always\und} consistent.
+		When a {unique\und} solution exists we can write {x\hat} = (A{T\sup}A){-1\sup}A{T\sup}{b\bar}
+		{Otherwise\und}
+			{x\hat} = (A{T\sup}A)\\A{T\sup}{b\bar}
+				^ Matlab, not Math (backslash operator)
+{Linear Regression\und}
+	If you are given 3+ points, it is "unlikely" that a line goes through all of them.
+	
+	{x\bar} = given x-coords
+	{y\bar} = given y-coords
+	Try to solve [x.^0 x.^1]*[b m]' = y
+		^ Probably doesn't have a solution
+	Instead we do:
+		A = [x.^0 x.^1]
+		Solve: A{T\sup}A{c\hat} = A{T\sup}{y\bar}
+Example in Matlab:
+	T = [120;104;93;80;71];
+	P = [98;21;0;-16;-78.6];
+	A = [T.^0 T.^1];
+	c = A'*A\\A'*P;
+	azero = -1*c(1)/c(2)
+		-> 314.16...
