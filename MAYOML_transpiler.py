@@ -136,6 +136,10 @@ modifications = {
 
 def main():
 
+    if len(sys.argv)<=1:
+        print("Usage: MAYOML_transpiler.py <input_file> [output_file]")
+        exit()
+
     in_file_name = sys.argv[1]
     in_file = open(in_file_name, "r")
     mayoml = in_file.read()
