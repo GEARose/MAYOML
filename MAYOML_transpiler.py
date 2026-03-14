@@ -28,7 +28,7 @@ def parse(text:str):
 
 # recursively akflasjdf;aslkd
 # pass in text without the external braces
-def parse_helper(text:str) ->str:
+def parse_helper(text:str) -> str:
     if ld not in text:      # Base case, no more braces {}
         if esc in text:     # modifications
             op = text.split(esc,1)
@@ -135,8 +135,7 @@ modifications = {
 }
 
 def main():
-
-    if len(sys.argv)<=1:
+    if len(sys.argv) <= 1:
         print("Usage: MAYOML_transpiler.py <input_file> [output_file]")
         exit()
 
@@ -146,7 +145,7 @@ def main():
     html = parse(mayoml)
 
     out_file_name = None
-    if len(sys.argv)>2:
+    if len(sys.argv) > 2:
         out_file_name = sys.argv[2]
     else:
         a = in_file_name.split(".")
