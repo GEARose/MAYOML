@@ -5,6 +5,7 @@ rd = "}"
 ldLit = "!@#$(" # literals of the delimter characters are temporarily 
 rdLit = "!@#$)" # stored as this, to later be turned back into the literal characters
 esc = "\\"  # escape "\"
+nl = "\n" # newline
 
 
 def parse(text:str):
@@ -21,10 +22,12 @@ def parse(text:str):
     working = parse_helper(working)
 
     # replace literals
-    finished = working.replace(ldLit,ld).replace(rdLit,rd)
+    working = working.replace(ldLit,ld).replace(rdLit,rd)
     
+    # fix newlines
+    working = working.replace(nl,nl+"<br>")
 
-    return finished
+    return working
 
 # recursively akflasjdf;aslkd
 # pass in text without the external braces
