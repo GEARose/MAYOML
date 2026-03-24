@@ -6,6 +6,7 @@ ldLit = "!@#$(" # literals of the delimter characters are temporarily
 rdLit = "!@#$)" # stored as this, to later be turned back into the literal characters
 esc = "\\"  # escape "\"
 nl = "\n" # newline
+tab = "\t" # tab
 
 
 def parse(text:str):
@@ -24,8 +25,8 @@ def parse(text:str):
     # replace literals
     working = working.replace(ldLit,ld).replace(rdLit,rd)
     
-    # fix newlines
-    working = working.replace(nl,nl+"<br>")
+    # fix newlines and tabs
+    working = working.replace(nl,nl+"<br>").replace(tab,"&emsp;&emsp;")
 
     return working
 
