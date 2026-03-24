@@ -112,6 +112,7 @@ def hat(text:str) -> str:
 symbols = {
     "perp": "⟂",
     "+-": "±",
+    "tri": "△",
     "ele": "∈",
     "and": "∧",
     "or": "∨",
