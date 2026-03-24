@@ -97,6 +97,8 @@ def subscript(text:str) -> str:
     return "<sub>"+text+"</sub>"
 def underline(text:str) -> str:
     return "<u>"+text+"</u>"
+def strikethrough(text:str) -> str:
+    return "<s>"+text+"</s>"
 def bold(text:str) -> str:
     return "<b>"+text+"</b>"
 def italicize(text:str) -> str:
@@ -182,6 +184,7 @@ modifications = {
     "sub": subscript,
     "sup": superscript,
     "und": underline,
+    "str": strikethrough,
     "bold": bold,
     "ital": italicize,
     "bar": bar,
